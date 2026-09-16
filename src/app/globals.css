@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme inline {
+  --breakpoint-xs: 24rem;
+
+  --font-display: var(--font-kaisei), "Yu Mincho", serif;
+  --font-sans: var(--font-zen), "Hiragino Kaku Gothic ProN", sans-serif;
+
+  --color-canvas: oklch(96.5% 0.012 83);
+  --color-control: oklch(98.5% 0.009 83);
+  --color-ink: oklch(22% 0.028 295);
+  --color-ink-muted: oklch(36% 0.026 295);
+  --color-muted: oklch(49% 0.022 245);
+  --color-rule: oklch(73% 0.014 82);
+  --color-accent: oklch(56% 0.18 35);
+  --color-accent-deep: oklch(48% 0.17 35);
+  --color-accent-ink: oklch(98% 0.014 65);
+  --color-error: oklch(51% 0.18 25);
+  --color-success: oklch(43% 0.12 155);
+  --color-spring: oklch(86% 0.085 8);
+  --color-spring-deep: oklch(59% 0.15 8);
+  --color-spring-ink: oklch(43% 0.12 8);
+  --color-summer: oklch(84% 0.08 190);
+  --color-summer-deep: oklch(52% 0.12 207);
+  --color-summer-ink: oklch(38% 0.1 207);
+  --color-autumn: oklch(85% 0.1 72);
+  --color-autumn-deep: oklch(55% 0.14 68);
+  --color-autumn-ink: oklch(40% 0.12 68);
+  --color-winter: oklch(85% 0.07 282);
+  --color-winter-deep: oklch(53% 0.1 285);
+  --color-winter-ink: oklch(38% 0.08 285);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-zen), "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--color-spring);
+  color: var(--color-ink);
+}
+
+.maplibregl-map {
+  font: inherit;
+}
+
+.maplibregl-ctrl-top-right {
+  right: 0.5rem;
+  top: 3.75rem;
+}
+
+.maplibregl-ctrl-group {
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  box-shadow: 0 0.5rem 1.5rem oklch(28% 0.03 245 / 0.14);
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group button {
+  background-color: var(--color-control);
+  height: 2.75rem;
+  width: 2.75rem;
+}
+
+.maplibregl-ctrl-group button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.maplibregl-ctrl-attrib {
+  background: color-mix(in oklch, var(--color-control) 94%, transparent);
+  color: var(--color-ink-muted);
+}
+
+.maplibregl-ctrl-attrib a {
+  color: inherit;
+}
+
+.maplibregl-popup-content {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.maplibregl-popup-tip {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
